@@ -7,17 +7,35 @@ import { UserContext } from './context';
 
 export default function Catalogo(){
 
-    
+    const produtos = [
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+        {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
+    ]
     const [cont,setcont]=useState(0)
     const [qtd,setqtd]=useState(5)
-    function soma(){
-        if(cont < qtd){
+    function soma(p){
+        if(cont < p.estoque){
             setcont(cont+1)
         }
         
     }
 
-    function subt(){
+    function subt(p){
         if(cont>0){
             setcont(cont-1)
         }
@@ -32,96 +50,32 @@ export default function Catalogo(){
                 </Link>   
             </MenuSuperior>
             <Produtos>
-                <Produto>
-                    <img src='https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'></img>
-                    <h1>Camisa Social</h1>
-                    <h2>Preço: R$ 49,90</h2>
-                    <Itens>
-                        <>
-                        <button onClick={subt}>-</button>
-                        <button>Comprar {cont}</button>
-                        <button onClick={soma}>+</button>
-                        </>
-                        <>
-                        <Estoque>
-                            <h3>Disponível</h3>
-                            <h3>{qtd}</h3>
-                        </Estoque>
-                        </>
-                    </Itens>
-                </Produto>
-                <Produto>
-                    <img src='https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'></img>
-                    <h1>Camisa Social</h1>
-                    <h2>Preço: R$ 49,90</h2>
-                    <Itens>
-                        <>
-                        <button onClick={subt}>-</button>
-                        <button>Comprar {cont}</button>
-                        <button onClick={soma}>+</button>
-                        </>
-                        <>
-                        <Estoque>
-                            <h3>Disponível</h3>
-                            <h3>{qtd}</h3>
-                        </Estoque>
-                        </>
-                    </Itens>
-                </Produto>
-                <Produto>
-                    <img src='https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'></img>
-                    <h1>Camisa Social</h1>
-                    <h2>Preço: R$ 49,90</h2>
-                    <Itens>
-                        <>
-                        <button onClick={subt}>-</button>
-                        <button>Comprar {cont}</button>
-                        <button onClick={soma}>+</button>
-                        </>
-                        <>
-                        <Estoque>
-                            <h3>Disponível</h3>
-                            <h3>{qtd}</h3>
-                        </Estoque>
-                        </>
-                    </Itens>
-                </Produto>
-                <Produto>
-                    <img src='https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'></img>
-                    <h1>Camisa Social</h1>
-                    <h2>Preço: R$ 49,90</h2>
-                    <Itens>
-                        <>
-                        <button onClick={subt}>-</button>
-                        <button>Comprar {cont}</button>
-                        <button onClick={soma}>+</button>
-                        </>
-                        <>
-                        <Estoque>
-                            <h3>Disponível</h3>
-                            <h3>{qtd}</h3>
-                        </Estoque>
-                        </>
-                    </Itens>
-                </Produto>
-                <Produto>
-                    <img src='https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'></img>
-                    <h1>Camisa Social</h1>
-                    <h2>Preço: R$ 49,90</h2>
-                    <Itens>
-                        <>
-                        <button onClick={subt}>-</button>
-                        <button>Comprar {cont}</button>
-                        <button onClick={soma}>+</button>
-                        </>
-                        <>
-                        <Estoque>
-                            <h3>Disponível</h3>
-                            <h3>{qtd}</h3>
-                        </Estoque>
-                        </>
-                    </Itens>
-                </Produto>
+                {produtos.map(p=>{
+                    return(
+                        <Produto>
+                        <img src={p.imagem}></img>
+                        <h1>{p.nome}</h1>
+                        <h2>Preço: R$ {p.preco}</h2>
+                        <Itens>
+                            <>
+                            <button onClick={subt}>-</button>
+                            <button>Comprar {cont}</button>
+                            <button onClick={soma}>+</button>
+                            </>
+                            <>
+                            <Estoque>
+                                <h3>Disponível</h3>
+                                <h3>{p.estoque}</h3>
+                            </Estoque>
+                            </>
+                        </Itens>
+                    </Produto>
+                    )
+                   
+
+                })}
+                
+            
             </Produtos>
         </Tela>
     )
