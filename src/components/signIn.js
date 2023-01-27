@@ -38,7 +38,7 @@ export default function SignIn(setusuname){
     return (
         <Tela>
          <Icon><ion-icon name="cart-outline"></ion-icon></Icon>
-          <Titulo>MyStore</Titulo>
+          <Titulo>AltMart</Titulo>
           <Input>
             <input onChange={event => setemail(event.target.value)} placeholder="E-mail"></input>
           </Input>
@@ -48,21 +48,23 @@ export default function SignIn(setusuname){
           <Botao>
             <button onClick={logar}>Entrar</button>
           </Botao>
-          <Link  to="/cadastro">
+          <Link  to="/sign-up">
             <Cadastro>Primeira vez? Cadastre-se!</Cadastro>
           </Link>
         </Tela>
       );
     }
     
+  
     const Tela = styled.div`
     display:flex;
     flex-direction: column;
     align-items:center;
     justify-content: center;
-    width: 375px;
-    height: 667px;
+    width: 100%;
+    height: 100vh;
     background-color: black;
+  
     `
     const Icon = styled.div`
     ion-icon{
@@ -74,7 +76,7 @@ export default function SignIn(setusuname){
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
     font-weight: 700;
-    color: #40E0D0;
+    color: white;
     `;
     const Titulo = styled.div`
     font-family: 'Saira Stencil One', cursive;

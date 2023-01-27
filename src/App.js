@@ -4,6 +4,7 @@ import SignUp from "./components/signUp.js";
 import Globalstyle from "./components/globalstyle.js";
 import { UserContext } from "./components/context.js";
 import { useState } from "react";
+import Catalogo from "./components/catalogo.js";
 
 export default function App() {
   const [User, setUser] = useState({});
@@ -17,7 +18,8 @@ export default function App() {
     <UserContext.Provider value={{User, setUser}}>
     <Globalstyle/>
       <Routes>
-        <Route path="/" element={<SignIn setusuname={setusuname}/>}></Route>
+        <Route path="/" element={<Catalogo />}></Route>
+        <Route path="/sign-in" element={<SignIn setusuname={setusuname}/>}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>
         
       </Routes>
