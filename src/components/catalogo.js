@@ -26,20 +26,7 @@ export default function Catalogo(){
         {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
         {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
     ]
-    const [cont,setcont]=useState(0)
-    const [qtd,setqtd]=useState(5)
-    function soma(p){
-        if(cont < p.estoque){
-            setcont(cont+1)
-        }
-        
-    }
 
-    function subt(p){
-        if(cont>0){
-            setcont(cont-1)
-        }
-    }
 
     return(
         <Tela>
@@ -51,6 +38,7 @@ export default function Catalogo(){
             </MenuSuperior>
             <Produtos>
                 {produtos.map(p=>{
+                    
                     return(
                         <Produto>
                         <img src={p.imagem}></img>
@@ -58,9 +46,9 @@ export default function Catalogo(){
                         <h2>Preço: R$ {p.preco}</h2>
                         <Itens>
                             <>
-                            <button onClick={subt}>-</button>
-                            <button>Comprar {cont}</button>
-                            <button onClick={soma}>+</button>
+                            
+                            <button>Comprar</button>
+                            
                             </>
                             <>
                             <Estoque>
@@ -86,7 +74,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-margin-left: 5px;
+margin-left: 25px;
 h3{
    font-size: 15px;
 }
@@ -94,6 +82,14 @@ h3{
 const Itens = styled.div`
 margin: 5px;
 display: flex;
+
+button{
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 700; 
+    background-color: #40E0D0;
+    border-radius: 5px;
+}
 `
 const Produtos = styled.div`
 margin-top: 70px;
