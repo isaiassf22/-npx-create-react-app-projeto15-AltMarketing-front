@@ -1,3 +1,4 @@
+
 import styled  from 'styled-components'
 import { Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
@@ -5,7 +6,7 @@ import { useState , useContext} from 'react';
 import axios from 'axios';
 import { UserContext } from './context';
 
-export default function Catalogo(){
+export default function Cart(){
 
     const produtos = [
         {nome:'Camisa Social',preco: 49.90,estoque:5,imagem:'https://a-static.mlcdn.com.br/280x210/camisa-masculina-hard-adventure-safari-cinza-azulado-uv50/thabel2/rdtx54vps-cinza-g/2a9c4814cf0aeec33b64a9c2b477185e.jpeg'},
@@ -36,10 +37,19 @@ export default function Catalogo(){
                 <Icon><ion-icon name="cart-outline"></ion-icon></Icon>
                     <h2>login</h2>
                 </Link> 
-                <Link to="/cart">
+                <Link to="/">
                     <h3>Carrinho</h3>
+                    
                 </Link> 
             </MenuSuperior>
+            <Carrinho>
+            <MenuCarrinho>
+                <h1>Meu Carrinho</h1>
+                </MenuCarrinho>
+                <Link to="/">
+                <Icon2><ion-icon name="chevron-back-outline"></ion-icon></Icon2>   
+                </Link> 
+            </Carrinho>
             <Produtos>
                 {produtos.map(p=>{
                     
@@ -74,6 +84,39 @@ export default function Catalogo(){
 }
 
 
+const Icon2 = styled.div`
+ion-icon{
+    position: absolute;
+    font-size: 30px;
+    color: #40E0D0;
+    right: 300px;
+    top: 9px;
+}
+`
+
+const MenuCarrinho = styled.div`
+
+h1{
+    font-family: 'Saira Stencil One', cursive;
+    position: absolute;
+    top:10px;
+    right: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      font-weight: 400;
+      font-size: 25px;
+      color: #40E0D0;
+}
+`
+const Carrinho = styled.div`
+position: absolute;
+right: 0;
+width:350px;
+height: 100vh;
+background-color: black;
+opacity: 0.98;
+`
 
 const Icon = styled.div`
 ion-icon{
