@@ -6,6 +6,8 @@ import { UserContext } from "./components/context.js";
 import { useState } from "react";
 import Catalogo from "./components/catalogo.js";
 import Cart from "./components/cart.js";
+import CheckOut from "./components/CheckOut.js"
+import Teste from "./components/Teste"
 
 export default function App() {
   const [User, setUser] = useState({});
@@ -23,7 +25,10 @@ export default function App() {
         <Route path="/sign-in" element={<SignIn setusuname={setusuname}/>}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
-        
+        <Route path="/CheckOut" element={<CheckOut />} />
+        <Route path="/Teste" element={<Teste />} />
+
+
       </Routes>
       </UserContext.Provider>
     </BrowserRouter>
